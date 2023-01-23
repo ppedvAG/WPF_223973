@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Container
+namespace EventRouting
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -25,10 +25,19 @@ namespace Container
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Tbx_Beispiel_TextChanged(object sender, TextChangedEventArgs e)
         {
-            //Codeseitiger Schreib-Zugriff auf eine Attached-Property des Canvas
-            Canvas.SetLeft(Rct_Blue, 50);
+            Tbl_Output.Text += $"{(sender as FrameworkElement).Name}: TextChanged\n";
+        }
+
+        private void Btn_Beispiel_Click(object sender, RoutedEventArgs e)
+        {
+            Tbl_Output.Text += $"{(sender as FrameworkElement).Name}: Click\n";
+        }
+
+        private void Wnd_Main_Click(object sender, RoutedEventArgs e)
+        {
+            Tbl_Output.Text += $"{(sender as FrameworkElement).Name}: ButtonBase.Click\n";
         }
     }
 }
