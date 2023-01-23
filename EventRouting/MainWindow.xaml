@@ -8,6 +8,7 @@
         Title="MainWindow" Height="319" Width="423"
         x:Name="Wnd_Main"
         ButtonBase.Click="Wnd_Main_Click">
+    
     <StackPanel Margin="10">
         <Button x:Name="Btn_Beispiel" 
                 Content="Klick Mich"
