@@ -43,7 +43,7 @@ namespace Controls
                 Btn_KlickMich.Content = Sdr_Wert.Value;
         }
 
-        private void Schließen_Click(object sender, RoutedEventArgs e)
+        private void CloseWindow(object sender, RoutedEventArgs e)
         {
             //Anzeigen einer MessageBox und Abfrage des geklickten Buttons
             if (MessageBox.Show
@@ -60,7 +60,7 @@ namespace Controls
             //Application.Current.Shutdown();
         }
 
-        private void Neu_Click(object sender, RoutedEventArgs e)
+        private void OpenWindow(object sender, RoutedEventArgs e)
         {
             Window wnd = new MainWindow();
 
@@ -70,7 +70,7 @@ namespace Controls
             wnd.Show();
         }
 
-        private void Dialog_Click(object sender, RoutedEventArgs e)
+        private void OpenDialogWindow(object sender, RoutedEventArgs e)
         {
             Window wnd = new MainWindow();
 

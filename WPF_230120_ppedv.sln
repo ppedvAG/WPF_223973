@@ -11,9 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Personendatenbank", "Person
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "M03_Container", "Container\M03_Container.csproj", "{79C6CC95-9B99-4C1A-B5C5-C10B2347E5F2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventRouting", "EventRouting\EventRouting.csproj", "{73D997CB-69C7-4A04-9899-23E53C15FEBE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "M04_EventRouting", "EventRouting\M04_EventRouting.csproj", "{73D997CB-69C7-4A04-9899-23E53C15FEBE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PropertyBinding", "PropertyBinding\PropertyBinding.csproj", "{4FD5631A-ADDC-477D-B00D-BB614F5C680B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M05_PropertyBinding", "PropertyBinding\M05_PropertyBinding.csproj", "{4FD5631A-ADDC-477D-B00D-BB614F5C680B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColorPicker", "ColorPicker\ColorPicker.csproj", "{03C39987-13A4-4C7B-B8F0-A9F4DFC33C12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M06_DataBinding", "DataBinding\M06_DataBinding.csproj", "{498EEAAD-A430-4AFE-83FB-B63664A61D49}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{4FD5631A-ADDC-477D-B00D-BB614F5C680B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FD5631A-ADDC-477D-B00D-BB614F5C680B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FD5631A-ADDC-477D-B00D-BB614F5C680B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03C39987-13A4-4C7B-B8F0-A9F4DFC33C12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03C39987-13A4-4C7B-B8F0-A9F4DFC33C12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03C39987-13A4-4C7B-B8F0-A9F4DFC33C12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03C39987-13A4-4C7B-B8F0-A9F4DFC33C12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{498EEAAD-A430-4AFE-83FB-B63664A61D49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{498EEAAD-A430-4AFE-83FB-B63664A61D49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{498EEAAD-A430-4AFE-83FB-B63664A61D49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{498EEAAD-A430-4AFE-83FB-B63664A61D49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
