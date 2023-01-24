@@ -8,14 +8,29 @@
         Title="MainWindow" Height="319" Width="423"
         x:Name="Wnd_Main"
         ButtonBase.Click="Wnd_Main_Click">
-    
-    <StackPanel Margin="10">
-        <Button x:Name="Btn_Beispiel" 
-                Content="Klick Mich"
-                Click="Btn_Beispiel_Click"/>
-        <TextBox x:Name="Tbx_Beispiel" 
-                 TextChanged="Tbx_Beispiel_TextChanged"/>
-        <TextBlock x:Name="Tbl_Output" Height="200"/>
+
+    <StackPanel Margin="10" x:Name="Aqua" Background="Aqua"
+                PreviewMouseDown="SP_PreviewMouseDown"
+                MouseDown="SP_MouseDown">
+        <StackPanel Margin="10" x:Name="Grün" Background="Green"
+                    PreviewMouseDown="SP_PreviewMouseDown"
+                    MouseDown="SP_MouseDown">
+            <StackPanel Margin="10" x:Name="Gelb" Background="Yellow"
+                        PreviewMouseDown="SP_PreviewMouseDown"
+                        MouseDown="SP_MouseDown">
+                 <StackPanel Margin="10" x:Name="Rot" Background="Red" Height="50"
+                             PreviewMouseDown="SP_PreviewMouseDown"
+                             MouseDown="SP_MouseDown">
+
+                    <Button x:Name="Btn_Beispiel" 
+                            Content="Klick Mich"
+                            Click="Btn_Beispiel_Click"/>
+                    <TextBox x:Name="Tbx_Beispiel" 
+                            TextChanged="Tbx_Beispiel_TextChanged"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <TextBlock x:Name="Tbl_Output" Height="200" Background="White"/>
 
     </StackPanel>
 </Window>
