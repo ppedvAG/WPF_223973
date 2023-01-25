@@ -7,45 +7,49 @@ using System.Threading.Tasks;
 
 namespace Validation
 {
+    //Für ValidatesOnDataErrors muss z.B. das Interface IDataErrorInfo implementiert werden. Dieses erfordert die Einbindung von zwei zusätzlichen
     class Person : IDataErrorInfo
     {
-		private string name;
-
-
+        private string name;
         public string Name
-		{
-			get { return name; }
-			set 
-			{
-				if (value.All(x => Char.IsLetter(x)))
-					name = value;
-				else
-					throw new Exception("Bitte gib nur Buchstaben ein");
-			}
-		}
+        {
+            get { return name; }
+            set
+            {
+                //Bei ValidatesOnException wird im Fehlerfall eine Exception geworfen, welche von der GUI aufgefangen
+                //wird und als Validierungsfehler interpretiert wird. Die Exception-Message ist der ErrorContent
+                if (value.All(x => Char.IsLetter(x)))
+                    name = value;
+                else
+                    throw new Exception("Bitte gib nur Buchstaben ein.");
+            }
+        }
+
+        public int Alter { get; set; }
 
 
-		public int Alter { get; set; }
+        //Von IDataErrorInfo geforderte Properties
 
-		public string Error => null;
+        //Error wird von WPF nicht benutzt
+        public string Error => null;
+
+        //Diese Property wird von der GUI als Validierung verwendet. Wenn ein nicht-leerer String zurückgegeben wird, 
+        //dann wird dies als Fehler interpretiert und dieser String als Fehlermeldung
         public string this[string columnName]
-		{
-			get
-			{
-				switch (columnName)
-				{
-					case (nameof(Alter)):
-						if (Alter < 0) return "Bitte gib dein wahres Alter an";
-						if (Alter > 200) return "Du sollst nicht lügen.";
+        {
+            get
+            {
+                switch (columnName)
+                {
+                    case (nameof(Alter)):
+                        if (Alter < 0 || Alter > 150) return "Bitte gib dein wahres Alter an.";
+                        break;
+                    default:
+                        break;
+                }
 
-						break;
-
-					default:
-						break;
-				}
-
-				return String.Empty;
-			}
-		}
+                return null;
+            }
+        }
     }
 }
