@@ -96,6 +96,30 @@
             <!--SelectedValue gibt die in der Property SelectedValuePath im ItemControl angegebene Property zurück-->
             <TextBlock Text="{Binding ElementName=Lbx_PKWs, Path=SelectedValue, StringFormat=SelectedValue: {0}}"/>
         </StackPanel>
+
+        <!--XML->TreeView-Bsp-->
+        <StackPanel Height="150" x:Name="Spl_XML">
+            <StackPanel.Resources>
+                <!--XmlDataProvider stellen eine Verbindung zu der Xml-Datei her. Für das Speichern von Änderungen muss zusätzliche Logik etabliert werden-->
+                <XmlDataProvider x:Key="xmlData"
+                                 Source="XMLFile1.xml"
+                                 XPath="node"/>
+                <!--HierarchicalDataTemplate werden z.B. von TreeViews verwendet um automatisch eine Hierachie zu verwalten (z.B. von Listen in Listen oder XML-Dateien).
+                        DataType definiert den Datentyp für den dieses Template gilt.
+                        ItemSource diefiniert die Quelle (hier <node> in der XML-Datei)-->
+                <HierarchicalDataTemplate DataType="node"
+                                          ItemsSource="{Binding XPath=node}">
+                    <!--Bei Anbindung an XML-Eigenschaften muss die XPath-Property des Binding-Objekts verwendet werden-->
+                    <TextBox Width="Auto"
+                                 Text="{Binding XPath=@Name, UpdateSourceTrigger=PropertyChanged}" />
+
+                </HierarchicalDataTemplate>
+
+            </StackPanel.Resources>
+
+            <TreeView Height="100" ItemsSource="{Binding Source={StaticResource xmlData}}"/>
+        </StackPanel>
+
     </StackPanel>
 
 </Window>
