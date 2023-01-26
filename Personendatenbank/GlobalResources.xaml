@@ -43,5 +43,9 @@
         <Setter Property="FontSize" Value="{StaticResource Dbl_Fontsize}"/>
     </Style>
 
+    <Style TargetType="Menu">
+        <Setter Property="FontSize" Value="{StaticResource Dbl_Fontsize}"/>
+        <Setter Property="Background" Value="{x:Null}"/>
+    </Style>
 
 </ResourceDictionary>
